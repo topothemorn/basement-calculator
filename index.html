@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Basement Framing & Drywall Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>DIY Basement Framing & Drywall Calculator</h1>
+            <p>12x13 Room (304 sq ft wall coverage, 3 walls)</p>
+        </header>
+
+        <!-- Materials Calculator -->
+        <section class="card materials-section">
+            <div class="card__header">
+                <h2>Materials Calculator</h2>
+                <button class="btn btn--outline btn--sm" onclick="resetToDefaults()">Reset to Default</button>
+            </div>
+            <div class="card__body">
+                <!-- Framing Materials -->
+                <div class="materials-category">
+                    <h3 class="category-title">Framing Materials</h3>
+                    <div class="materials-grid">
+                        <div class="materials-header">
+                            <span>Item</span>
+                            <span>Quantity</span>
+                            <span>Unit Price</span>
+                            <span>Total</span>
+                        </div>
+                        <div id="framingMaterials" class="materials-items"></div>
+                    </div>
+                    <div class="category-subtotal">
+                        <strong>Framing Materials Total: $<span id="framingSubtotal">0.00</span></strong>
+                    </div>
+                </div>
+
+                <!-- Drywall Materials -->
+                <div class="materials-category">
+                    <h3 class="category-title">Drywall Materials</h3>
+                    <div class="materials-grid">
+                        <div class="materials-header">
+                            <span>Item</span>
+                            <span>Quantity</span>
+                            <span>Unit Price</span>
+                            <span>Total</span>
+                        </div>
+                        <div id="drywallMaterials" class="materials-items"></div>
+                    </div>
+                    <div class="category-subtotal">
+                        <strong>Drywall Materials Total: $<span id="drywallSubtotal">0.00</span></strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Calculator -->
+        <section class="card tools-section">
+            <div class="card__header">
+                <h2>Tools Calculator</h2>
+                <p class="text-secondary">Select tools you need to purchase (unchecked by default since you have some tools)</p>
+            </div>
+            <div class="card__body">
+                <!-- Framing Tools -->
+                <div class="tools-category">
+                    <h3 class="category-title">Framing Tools</h3>
+                    <div class="tools-grid" id="framingTools"></div>
+                    <div class="category-subtotal">
+                        <strong>Framing Tools Total: $<span id="framingToolsSubtotal">0.00</span></strong>
+                    </div>
+                </div>
+
+                <!-- Drywall Tools -->
+                <div class="tools-category">
+                    <h3 class="category-title">Drywall Tools</h3>
+                    <div class="tools-grid" id="drywallTools"></div>
+                    <div class="category-subtotal">
+                        <strong>Drywall Tools Total: $<span id="drywallToolsSubtotal">0.00</span></strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cost Summary -->
+        <section class="card cost-summary">
+            <div class="card__header">
+                <h2>Cost Summary</h2>
+            </div>
+            <div class="card__body">
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <h3>Framing Materials</h3>
+                        <p class="summary-value">$<span id="summaryFramingMaterials">0.00</span></p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Drywall Materials</h3>
+                        <p class="summary-value">$<span id="summaryDrywallMaterials">0.00</span></p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Framing Tools</h3>
+                        <p class="summary-value">$<span id="summaryFramingTools">0.00</span></p>
+                    </div>
+                    <div class="summary-item">
+                        <h3>Drywall Tools</h3>
+                        <p class="summary-value">$<span id="summaryDrywallTools">0.00</span></p>
+                    </div>
+                    <div class="summary-item total">
+                        <h3>PROJECT TOTAL</h3>
+                        <p class="summary-value">$<span id="summaryTotal">0.00</span></p>
+                    </div>
+                </div>
+
+                <div class="comparison-table">
+                    <h3>Cost Comparison</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Approach</th>
+                                <th>Cost</th>
+                                <th>Your Savings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Your DIY Cost</td>
+                                <td>$<span id="diyTotal">0.00</span></td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Professional Installation (Low)</td>
+                                <td>$1,835.00</td>
+                                <td class="savings">$<span id="savingsLow">0.00</span></td>
+                            </tr>
+                            <tr>
+                                <td>Professional Installation (High)</td>
+                                <td>$3,429.00</td>
+                                <td class="savings">$<span id="savingsHigh">0.00</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
